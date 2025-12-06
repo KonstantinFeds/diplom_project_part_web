@@ -1,10 +1,12 @@
 import pytest
 from selene import browser, be
+from tests.page.cart_page import CartPage
+
+cart_page = CartPage()
 
 
 @pytest.fixture(scope='function')
 def open_browser():
-
     browser.driver.maximize_window()
     browser.config.base_url = 'https://ural-auto.ru/'
 
@@ -15,12 +17,17 @@ def go_to_the_catalog_dinamiki(open_browser):
     browser.element('[title="Каталог"]').click()
     browser.element('a.nav-submenu__list-link_title[href="/catalog/dinamiki/"]').click()
 
+
 @pytest.fixture(scope='function')
 def accept_cookies(open_browser):
     browser.open('/')
     browser.element('.js-message-block__close').should(be.clickable).click()
 
 
+@pytest.fixture(scope='function')
+def add_products_to_cart(open_browser):
+    browser.open('/')
+    cart_page.add_products_to_cart()
 
     yield
     browser.quit()
