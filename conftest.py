@@ -24,10 +24,6 @@ def accept_cookies(open_browser):
     browser.element('.js-message-block__close').should(be.clickable).click()
 
 
-@pytest.fixture(scope='function')
-def add_products_to_cart(open_browser):
-    browser.open('/')
-    cart_page.add_products_to_cart()
 
     yield
     browser.quit()

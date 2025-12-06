@@ -15,11 +15,11 @@ class CartPage:
             continue_button.perform(command.js.scroll_into_view)
             continue_button.click()
 
-    def count_product_to_cart_expect(self):
+
+    def assert_count_product_to_cart(self):
         cart_count = browser.element("[id='header_basket_count js-header-cart-click']").perform(
             command.js.scroll_into_view)
 
         browser.driver.refresh()
-        cart_count.perform(command.js.scroll_into_view)
         cart_count.should(have.exact_text('КОРЗИНА\n9'))
 
