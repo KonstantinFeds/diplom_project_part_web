@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "diplom-project-ozon"
+version = "0.1.0"
+description = ""
+authors = ["konstatin fedoseev <kons.fed.99@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pytest = "8.4.2"
+allure-pytest = "2.15.0"
+selene = "2.0.0rc9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
