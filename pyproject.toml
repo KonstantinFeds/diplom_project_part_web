@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "diplom-project-ozon"
+name = "diplom-project-ui"
 version = "0.1.0"
 description = ""
 authors = ["konstatin fedoseev <kons.fed.99@gmail.com>"]
@@ -15,3 +15,8 @@ selene = "2.0.0rc9"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "black (>=25.11.0,<26.0.0)"
+]

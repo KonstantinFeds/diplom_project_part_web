@@ -1,19 +1,26 @@
 import pytest
-from selene import browser,have
+from selene import browser, have
 from tests.page.catalog_page import CatalogPage
 
 catalog_page = CatalogPage()
 
-def test_go_to_the_catalog_subwoofer(open_browser,accept_cookies):
 
-    catalog_page.go_to_the_catalog_subwoofer()
-    browser.element('.page-header__title').should(have.exact_text('САБВУФЕРЫ'))
-    catalog_page.expected_products_in_the_catalog(
-        'ТТ 12',
-                                  'МОЛОТ 12', 'ТТ 15',
-                                  'ПМН-1 "Черная Вдова"',
-                                  'МОЛОТ 10',
-                                  'СИМФОНИЯ 15',
-                                  'УЛЬТИМАТУМ 12',
-                                  'УЛЬТИМАТУМ 15',
-                                  'ПАТРИОТ 6,5')
+def test_go_to_the_catalog_subwoofer(open_browser_and_accept_cookies):
+
+    (
+        (
+            catalog_page.go_to_the_catalog_subwoofer().assert_name_catalog_subwoofer(
+                "САБВУФЕРЫ"
+            )
+        ).assert_products_in_the_catalog(
+            "ТТ 12",
+            "МОЛОТ 12",
+            "ТТ 15",
+            'ПМН-1 "Черная Вдова"',
+            "МОЛОТ 10",
+            "СИМФОНИЯ 15",
+            "УЛЬТИМАТУМ 12",
+            "УЛЬТИМАТУМ 15",
+            "ПАТРИОТ 6,5",
+        )
+    )
