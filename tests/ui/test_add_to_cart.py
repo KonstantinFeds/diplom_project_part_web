@@ -1,6 +1,6 @@
 import pytest
-from tests.page.cart_page import CartPage
-from tests.page.catalog_page import CatalogPage
+from tests.pages.cart_page import CartPage
+from tests.pages.catalog_page import CatalogPage
 
 cart_page = CartPage()
 catalog_page = CatalogPage()

@@ -1,6 +1,6 @@
 import pytest
 from selene import browser, have
-from tests.page.catalog_page import CatalogPage
+from tests.pages.catalog_page import CatalogPage
 
 catalog_page = CatalogPage()
 

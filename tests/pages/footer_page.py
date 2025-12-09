@@ -1,0 +1,19 @@
+from selene import browser, command, be, have
+
+from tests.pages.locators import Locators
+
+
+class FooterPage:
+
+    def select_german_language(self):
+        german_button = browser.all(Locators.GERMAN_LANGUAGE_BUTTON)
+        german_button[1].should(be.visible)
+        german_button[1].perform(command.js.scroll_into_view)
+        german_button[1].click()
+
+    def assert_german_name_catalog_dinamiki(
+        self, title1, title2, title3, title4, title5, title6, title7
+    ):
+        browser.all(Locators.ALL_TITLE_NAME_CATALOG).should(
+            have.exact_texts(title1, title2, title3, title4, title5, title6, title7)
+        )

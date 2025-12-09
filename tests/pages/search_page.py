@@ -1,25 +1,24 @@
 from selene import browser, have
+from tests.pages.locators import Locators
 
 
 class SearchPage:
     def click_search_string(self):
-        browser.element('[title="Поиск"]').click()
+        browser.element(Locators.SEARCH_BUTTON).click()
 
         return self
 
     def insert_name_product(self, value):
-        browser.element("#title-search-input").type(value).press_enter()
+        browser.element(Locators.INPUT_SEARCH).type(value).press_enter()
 
         return self
 
     def click_on_the_found_product(self):
-        browser.element(".catalog-block__desc").click()
+        browser.element(Locators.SEARCH_RESULT_PRODUCT).click()
 
         return self
 
     def assert_name_product(self, value):
-        browser.element(".product-detail__name.product-detail__name_mb").should(
-            have.exact_text(value)
-        )
+        browser.element(Locators.NAME_PRODUCT).should(have.exact_text(value))
 
         return self

@@ -1,6 +1,6 @@
 import pytest
 from selene import browser, be
-from tests.page.cart_page import CartPage
+from tests.pages.cart_page import CartPage
 
 cart_page = CartPage()
 

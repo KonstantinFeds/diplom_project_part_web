@@ -1,25 +1,25 @@
 from selene import browser, have
 
+from tests.pages.locators import Locators
+
 
 class CatalogPage:
     def go_to_the_catalog_subwoofer(self):
-        browser.element('[title="Каталог"]').click()
-        browser.element(
-            'a.nav-submenu__list-link_title[href="/catalog/subwoofers/"]'
-        ).click()
+        browser.element(Locators.CATALOG_BUTTON).click()
+        browser.element(Locators.CATALOG_SUBWOOFERS_BUTTON).click()
 
         return self
 
     def assert_name_catalog_subwoofer(self, value):
-        browser.element(".page-header__title").should(have.exact_text(value))
+        browser.element(Locators.TITLE_CATALOG_SUBWOOFERS).should(
+            have.exact_text(value)
+        )
 
         return self
 
     def go_to_the_catalog_dinamiki(self):
-        browser.element('[title="Каталог"]').click()
-        browser.element(
-            'a.nav-submenu__list-link_title[href="/catalog/dinamiki/"]'
-        ).click()
+        browser.element(Locators.CATALOG_BUTTON).click()
+        browser.element(Locators.CATALOG_DINAMIKI_BUTTON).click()
 
         return self
 
@@ -36,7 +36,7 @@ class CatalogPage:
         product9,
     ):
         (
-            browser.all(".catalog-block__name").should(
+            browser.all(Locators.ALL_PRODUCTS_CATALOG).should(
                 have.exact_texts(
                     product1,
                     product2,
