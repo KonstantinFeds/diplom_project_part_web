@@ -25,3 +25,13 @@ class Locators:
 
     GERMAN_LANGUAGE_BUTTON = '[title = "Немецкий"]'
     ALL_TITLE_NAME_CATALOG = '[class="catalog-tile__name"]'
+
+    LOGIN_PAGE_BUTTON = ".nav-panel__link_login"
+    INPUT_USER_LOGIN = '[name="USER_LOGIN"]'
+    INPUT_USER_PASSWORD = '[name="USER_PASSWORD"]'
+    LOGIN_BUTTON = '[name="Login"]'
+    LOGIN_ERROR_MESSAGE = ".auth-error.form-group.form-helper"
+
+    CHECKBOX_SERIES_NAME_AK = '//label[text()="АК"]'
+    CHECKBOX_SERIES_NAME_BULAVA = '//label[text()="Булава"]'
+    CATALOG_RESULTS_PRODUCTS = '[class="catalog-block__helper"]'

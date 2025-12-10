@@ -52,3 +52,20 @@ class CatalogPage:
         )
 
         return self
+
+    def checkbox_filter_series_ak_click(self):
+        browser.element(Locators.CHECKBOX_SERIES_NAME_AK).click()
+        return self
+
+    def checkbox_filter_series_bulava_click(self):
+        browser.element(Locators.CHECKBOX_SERIES_NAME_BULAVA).click()
+        return self
+
+    def assert_products_with_filter(
+        self, product1, product2, product3, product4, product5
+    ):
+        browser.all(Locators.CATALOG_RESULTS_PRODUCTS).should(
+            have.exact_texts(product1, product2, product3, product4, product5)
+        )
+
+        return self

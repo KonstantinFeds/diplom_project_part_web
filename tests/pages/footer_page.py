@@ -11,9 +11,13 @@ class FooterPage:
         german_button[1].perform(command.js.scroll_into_view)
         german_button[1].click()
 
+        return self
+
     def assert_german_name_catalog_dinamiki(
         self, title1, title2, title3, title4, title5, title6, title7
     ):
         browser.all(Locators.ALL_TITLE_NAME_CATALOG).should(
             have.exact_texts(title1, title2, title3, title4, title5, title6, title7)
         )
+
+        return self
