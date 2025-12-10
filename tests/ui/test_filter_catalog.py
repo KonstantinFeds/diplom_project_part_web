@@ -3,7 +3,7 @@ from tests.pages.catalog_page import CatalogPage
 catalog_page = CatalogPage()
 
 
-def test_series_filter_works_in_subwoofers_catalog(open_browser_and_accept_cookies):
+def test_series_filter_works_in_subwoofers_catalog(open_site_without_cookies):
 
     (
         catalog_page.go_to_the_catalog_subwoofer()

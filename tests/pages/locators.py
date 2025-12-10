@@ -1,4 +1,7 @@
 class Locators:
+
+    ACCEPT_COOKIES_BUTTON = ".js-message-block__close"
+
     SEARCH_BUTTON = '[title="Поиск"]'
     INPUT_SEARCH = "#title-search-input"
     SEARCH_RESULT_PRODUCT = 'a.catalog-block__name[href*="molniya-kvark"]'
@@ -11,7 +14,7 @@ class Locators:
     CART_BUTTON = '[id="header_basket_count js-header-cart-click"]'
     SELECT_ALL_PRODUCTS_BUTTON = '[for="cart-select-all"]'
     DELETE_ALL_BUTTON = '[id="cart-delete-all"]'
-    EMPTY_CART_TITLE = ".pages-header__title"
+    EMPTY_CART_TITLE = 'h1[class*="header__title"]'
 
     CATALOG_BUTTON = '[title="Каталог"]'
     TITLE_CATALOG_SUBWOOFERS = ".page-header__title"

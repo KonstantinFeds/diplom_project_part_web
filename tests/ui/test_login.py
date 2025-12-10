@@ -3,7 +3,7 @@ from tests.pages.login_page import LoginPage
 login_page = LoginPage()
 
 
-def test_invalid_login(open_browser_and_accept_cookies):
+def test_invalid_login(open_site_without_cookies):
 
     (
         login_page.go_to_login_page_click()

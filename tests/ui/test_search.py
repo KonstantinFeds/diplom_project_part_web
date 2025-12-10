@@ -4,7 +4,7 @@ from tests.pages.search_page import SearchPage
 search_page = SearchPage()
 
 
-def test_search_by_product_name(open_browser_and_accept_cookies):
+def test_search_by_product_name(open_site_without_cookies):
 
     (
         search_page.click_search_string()

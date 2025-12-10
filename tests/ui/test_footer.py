@@ -3,7 +3,7 @@ from tests.pages.footer_page import FooterPage
 footer_page = FooterPage()
 
 
-def test_switch_to_german_language(open_browser_and_accept_cookies):
+def test_switch_to_german_language(open_site_without_cookies):
     (
         footer_page.select_german_language().assert_german_name_catalog_dinamiki(
             "Kopf -\nGerät",

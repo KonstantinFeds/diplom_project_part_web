@@ -1,16 +1,23 @@
 import pytest
 from selene import browser, be
-from tests.pages.cart_page import CartPage
+from tests.pages.locators import Locators
 
-cart_page = CartPage()
+
+@pytest.fixture(scope="function", autouse=True)
+def browser_config():
+    """Настройка конфигурации браузера"""
+    browser.config.base_url = "https://ural-auto.ru/"
+    browser.config.timeout = 10
+    browser.config.window_width = 1495
+    browser.config.window_height = 870
 
 
 @pytest.fixture(scope="function")
-def open_browser_and_accept_cookies():
-    browser.driver.maximize_window()
-    browser.open("https://ural-auto.ru/")
-    # browser.config.base_url = 'https://ural-auto.ru/'
-    browser.element(".js-message-block__close").should(be.clickable).click()
+def open_site_without_cookies(browser_config):
+    """Открытие сайта и обработка куки"""
+    browser.open("/")
+    browser.element(Locators.ACCEPT_COOKIES_BUTTON).should(be.clickable).click()
 
     yield
+
     browser.quit()

@@ -7,7 +7,7 @@ cart_page = CartPage()
 catalog_page = CatalogPage()
 
 
-def test_removing_products_from_the_cart(open_browser_and_accept_cookies):
+def test_removing_products_from_the_cart(open_site_without_cookies):
 
     catalog_page.go_to_the_catalog_dinamiki()
     (

@@ -5,7 +5,7 @@ from tests.pages.catalog_page import CatalogPage
 catalog_page = CatalogPage()
 
 
-def test_go_to_the_catalog_subwoofer(open_browser_and_accept_cookies):
+def test_go_to_the_catalog_subwoofer(open_site_without_cookies):
 
     (
         (
