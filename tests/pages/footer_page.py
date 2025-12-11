@@ -1,3 +1,4 @@
+import allure
 from selene import browser, command, be, have
 
 from tests.pages.locators import Locators
@@ -5,6 +6,7 @@ from tests.pages.locators import Locators
 
 class FooterPage:
 
+    @allure.step('применение немецкого языка в "футере"')
     def select_german_language(self):
         german_button = browser.all(Locators.GERMAN_LANGUAGE_BUTTON)
         german_button[1].should(be.visible)
@@ -13,7 +15,8 @@ class FooterPage:
 
         return self
 
-    def assert_german_name_catalog_dinamiki(
+    @allure.step("перевод категорий на немецкий язык")
+    def assert_german_name_catalog(
         self, title1, title2, title3, title4, title5, title6, title7
     ):
         browser.all(Locators.ALL_TITLE_NAME_CATALOG).should(

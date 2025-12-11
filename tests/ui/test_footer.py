@@ -5,7 +5,7 @@ footer_page = FooterPage()
 
 def test_switch_to_german_language(open_site_without_cookies):
     (
-        footer_page.select_german_language().assert_german_name_catalog_dinamiki(
+        footer_page.select_german_language().assert_german_name_catalog(
             "Kopf -\nGerät",
             "Die akustischen\nSysteme",
             "Ein lautes\nGeräusch",
