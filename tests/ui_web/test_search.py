@@ -1,5 +1,5 @@
 from selene import browser, have
-from tests.pages.search_page import SearchPage
+from tests.pages_ui_web.search_page_ui_web import SearchPage
 
 search_page = SearchPage()
 

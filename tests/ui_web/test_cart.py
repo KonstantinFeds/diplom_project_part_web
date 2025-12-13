@@ -1,7 +1,7 @@
 import time
 from selene import browser, be, command
-from tests.pages.cart_page import CartPage
-from tests.pages.catalog_page import CatalogPage
+from tests.pages_ui_web.cart_page_ui_web import CartPage
+from tests.pages_ui_web.catalog_page_ui_web import CatalogPage
 
 cart_page = CartPage()
 catalog_page = CatalogPage()

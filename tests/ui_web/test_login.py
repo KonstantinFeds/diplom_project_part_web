@@ -1,4 +1,4 @@
-from tests.pages.login_page import LoginPage
+from tests.pages_ui_web.login_page_ui_web import LoginPage
 
 login_page = LoginPage()
 

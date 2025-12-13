@@ -1,4 +1,4 @@
-from tests.pages.footer_page import FooterPage
+from tests.pages_ui_web.footer_page_ui_web import FooterPage
 
 footer_page = FooterPage()
 

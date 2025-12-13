@@ -50,7 +50,7 @@ def to_driver_options(context):
             }
         }
 
-        load_dotenv(dotenv_path=utils.file.abs_path_from_project('.env'))
+        load_dotenv(dotenv_path=utils.file.abs_path_from_project('.env.credentials'))
         options.capabilities.update(selenoid_capabilities)
 
         # Создаем удаленный драйвер
