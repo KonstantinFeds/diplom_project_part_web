@@ -35,6 +35,7 @@ def context(request):
     return request.config.getoption("--context")
 
 
+@allure.title("настройка конфигураций для управления браузером")
 @pytest.fixture(scope="function", autouse=True)
 def browser_management(context):
     config.to_driver_options(context)
