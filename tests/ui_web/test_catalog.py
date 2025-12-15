@@ -1,5 +1,3 @@
-from tkinter.constants import NORMAL
-
 import allure
 from tests.pages_ui_web.catalog_page import CatalogPage
 
