@@ -207,4 +207,6 @@ marimo/_lsp/
 __marimo__/
 #allure-dir
 tests/ui_web/allure-results
+allure-results/
+#creds
 .env.credentials/

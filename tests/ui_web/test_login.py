@@ -1,8 +1,12 @@
-from tests.pages_ui_web.login_page_ui_web import LoginPage
+import allure
+from tests.pages_ui_web.login_page import LoginPage
 
 login_page = LoginPage()
 
 
+@allure.epic("авторизация")
+@allure.title("сообщение об ошибке при неверном вводе логина и пароля")
+@allure.severity(allure.severity_level.CRITICAL)
 def test_invalid_login(open_site_without_cookies):
 
     (

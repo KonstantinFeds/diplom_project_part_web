@@ -1,6 +1,6 @@
 import allure
 from selene import browser, have
-from tests.pages_ui_web.locators_ui_web import LocatorsWeb
+from tests.pages_ui_web.locators import LocatorsWeb
 
 
 class CatalogPage:

@@ -1,11 +1,14 @@
-import pytest
-from tests.pages_ui_web.cart_page_ui_web import CartPage
-from tests.pages_ui_web.catalog_page_ui_web import CatalogPage
+import allure
+from tests.pages_ui_web.cart_page import CartPage
+from tests.pages_ui_web.catalog_page import CatalogPage
 
 cart_page = CartPage()
 catalog_page = CatalogPage()
 
 
+@allure.epic("добавление товара в корзину")
+@allure.title("добавление товаров в корзину")
+@allure.severity(allure.severity_level.CRITICAL)
 def test_add_to_cart_product(open_site_without_cookies):
 
     catalog_page.go_to_the_catalog_dinamiki()

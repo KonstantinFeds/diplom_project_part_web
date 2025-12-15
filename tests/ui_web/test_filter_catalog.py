@@ -1,8 +1,12 @@
-from tests.pages_ui_web.catalog_page_ui_web import CatalogPage
+import allure
+from tests.pages_ui_web.catalog_page import CatalogPage
 
 catalog_page = CatalogPage()
 
 
+@allure.epic("фильтры")
+@allure.title('применение фильтра "АК" и "Булава" в каталоге')
+@allure.severity(allure.severity_level.NORMAL)
 def test_series_filter_works_in_subwoofers_catalog(open_site_without_cookies):
 
     (

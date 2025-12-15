@@ -1,10 +1,14 @@
-import pytest
-from selene import browser, have
-from tests.pages_ui_web.catalog_page_ui_web import CatalogPage
+from tkinter.constants import NORMAL
+
+import allure
+from tests.pages_ui_web.catalog_page import CatalogPage
 
 catalog_page = CatalogPage()
 
 
+@allure.epic("каталог")
+@allure.title('наличие в каталоге "Сабвуферы" товаров')
+@allure.severity(allure.severity_level.NORMAL)
 def test_go_to_the_catalog_subwoofer(open_site_without_cookies):
 
     (

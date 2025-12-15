@@ -6,8 +6,9 @@ from dotenv import load_dotenv
 
 load_dotenv(dotenv_path="../../.env.credentials")
 
-USER_NAME_BSTACK = os.getenv('USER_NAME_BSTACK')
-ACCESS_KEY_BSTACK = os.getenv('ACCESS_KEY_BSTACK')
+USER_NAME_BSTACK = os.getenv("USER_NAME_BSTACK")
+ACCESS_KEY_BSTACK = os.getenv("ACCESS_KEY_BSTACK")
+
 
 # cкриншот
 def add_screenshot_selenoid(browser):

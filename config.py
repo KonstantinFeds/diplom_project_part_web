@@ -10,7 +10,7 @@ import utils.file
 
 
 def clear_allure_results():
-    """Очищение результатов модуля allure-results"""
+    """очистка результатов модуля allure-results"""
     allure_dir = Path("allure-results")
 
     if allure_dir.exists():
@@ -20,7 +20,7 @@ def clear_allure_results():
 
 
 def to_driver_options(context):
-
+    """настройка конфигурация от переданного параметра --context"""
     if context == "local_browser":
         browser.config.base_url = "https://ural-auto.ru/"
         browser.config.timeout = 10
@@ -47,16 +47,16 @@ def to_driver_options(context):
             "selenoid:options": {
                 "enableVNC": True,
                 "enableVideo": True,
-            }
+            },
         }
 
-        load_dotenv(dotenv_path=utils.file.abs_path_from_project('.env.credentials'))
+        load_dotenv(dotenv_path=utils.file.abs_path_from_project(".env.credentials"))
         options.capabilities.update(selenoid_capabilities)
 
         # Создаем удаленный драйвер
         driver = webdriver.Remote(
             command_executor=f"https://{os.getenv('SELENOID_LOGIN')}:{os.getenv('SELENOID_PASS')}@{os.getenv('SELENOID_URL')}/wd/hub",
-            options=options
+            options=options,
         )
         browser.config.driver = driver
 

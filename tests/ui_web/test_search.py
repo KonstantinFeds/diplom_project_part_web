@@ -1,9 +1,12 @@
-from selene import browser, have
-from tests.pages_ui_web.search_page_ui_web import SearchPage
+import allure
+from tests.pages_ui_web.search_page import SearchPage
 
 search_page = SearchPage()
 
 
+@allure.epic("поиск")
+@allure.title("поиск товара по названию")
+@allure.severity(allure.severity_level.CRITICAL)
 def test_search_by_product_name(open_site_without_cookies):
 
     (
