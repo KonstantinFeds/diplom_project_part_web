@@ -55,7 +55,7 @@ def to_driver_options(context):
 
         # Создаем удаленный драйвер
         driver = webdriver.Remote(
-            command_executor=f"https://{os.getenv('SELENOID_LOGIN')}:{os.getenv('SELENOID_PASS')}@{os.getenv('SELENOID_URL')}/wd/hub",
+            command_executor=f"https://{os.getenv('SELENOID_LOGIN')}:{os.getenv('SELENOID_PASSWORD')}@{os.getenv('SELENOID_URL')}/wd/hub",
             options=options,
         )
         browser.config.driver = driver
